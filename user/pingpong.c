@@ -6,7 +6,7 @@ int main(int argc, char argv[])
 	int pipe_ping[2], pipe_pong[2];
 	int cpid;
 	char buf = '@';
-	if (pipe(pipe_ping) == -1 || pipe(pipe_pong) == -1)
+	if (pipe(pipe_ping) < 0 || pipe(pipe_pong) < 0)
 	{
 		printf("Fail to create the pipe.\n");
 		exit(-1);
